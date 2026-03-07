@@ -23,7 +23,7 @@ def detect_notes(frame, HIT_LINE_Y):
         pixels = cv2.countNonZero(mask)
 
         if pixels > PIXEL_THRESHOLD: 
-            detect_notes.append(i)
+            detected_notes.append(i)
 
 
-return detect_notes
+    return detected_notes

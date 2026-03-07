@@ -15,7 +15,7 @@ def main():
 
             screenshot = sct.grab(GAME_REGION)
             frame = np.array(screenshot)
-            frame = cv2.cvtColor(framem, cv2.COLOR_BGRA2BGR)
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGRA2BGR)
 
             altura, largura, _ = frame.shape
             HIT_LINE_Y = int(altura * 0.92)
