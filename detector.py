@@ -16,11 +16,15 @@ def detect_notes(frame, HIT_LINE_Y):
         x_start = i * largura_coluna
         x_end = x_start + largura_coluna
 
-        area = hsv[HIT_LINE_Y-10:HIT_LINE_Y+10, x_start:x_end]
+        area = hsv[HIT_LINE_Y-6:HIT_LINE_Y+6, x_start+10:x_end-10]
 
         mask = cv2.inRange(area, LOW_GREEN, HIGH_GREEN)
 
         pixels = cv2.countNonZero(mask)
+
+        print(f"coluna {i} pixels:", pixels)
+
+        cv2.imshow("mask", mask)
 
         if pixels > PIXEL_THRESHOLD: 
             detected_notes.append(i)

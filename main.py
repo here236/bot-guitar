@@ -5,7 +5,7 @@ import mss
 
 from config import GAME_REGION  
 from detector import detect_notes
-from input_controller import play
+from input_controller import play, columnState
 
 def main():
 
@@ -24,6 +24,7 @@ def main():
 
             if notes:
                 print("Notas: ", notes)
+                print("coluna:", columnState)
                 play(notes)
 
             

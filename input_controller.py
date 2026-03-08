@@ -2,8 +2,21 @@ import keyboard
 
 TECLAS = ["a", "s", "j", "k", "l"]
 
+columnState = [False, False, False, False, False]
+
 def play(colunas):
 
-    for coluna in colunas:
-        tecla = TECLAS[coluna]
-        keyboard.press_and_release(tecla)
+    global columnState
+
+    for i in range(len(TECLAS)):
+
+        if i in colunas:
+
+            if not columnState[i]:
+                keyboard.press_and_release(TECLAS[i])
+                columnState[i] = True
+
+
+        else:
+            columnState[i] = False
+    
